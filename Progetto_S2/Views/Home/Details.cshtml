@@ -1,0 +1,42 @@
+﻿@model Progetto_S2.Models.Article
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1 class="bg-dark form-create text-light p-2 display-4">Details</h1>
+
+<div>
+    <h4>Dettagli dell'articolo</h4>
+    <hr />
+    <dl class="row text-center">
+        <dt class="col-sm-2 text-light">
+            <p class=" bg-dark form-create py-2 text-center">
+            @Html.DisplayNameFor(model => model.Name)
+            </p>
+            <hr />
+            <p class="fw-normal">@Model.Name</p>
+        </dt>
+        <dt class="col-sm-2 text-light">
+            <p class=" bg-dark form-create py-2 text-center">
+            @Html.DisplayNameFor(model => model.Price)
+            </p>
+            <hr />
+            <p class="fw-normal">@Model.Price.ToString("C")</p>
+        </dt>
+        <dt class="col-sm-3 text-light">
+            <p class=" bg-dark form-create py-2 text-center">@Html.DisplayNameFor(model => model.Description)</p>
+            <hr />
+            <p class="fw-normal">@Model.Description</p>
+        </dt>
+    </dl>
+    <img src="@Model.CoverImageUrl" alt="@Model.Name" class="img-fluid">
+    <div class="mt-4">
+        <img src="@Model.AdditionalImage1" alt="Immagine Addizionale 1" class="img-thumbnail">
+        <img src="@Model.AdditionalImage2" alt="Immagine Addizionale 2" class="img-thumbnail">
+    </div>
+</div>
+<div>
+    
+    <a asp-action="Index" class="link-light">Back to List</a>
+</div>

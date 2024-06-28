@@ -1,0 +1,31 @@
+﻿@model IEnumerable<Article>
+@{
+    ViewData["Title"] = "Home Page";
+    
+}
+
+<div class="container-fluid text-center bg-dark text-light form-create p-2">
+    <h1 class="display-4">Welcome</h1>
+    <div class="row">
+        <h4>Lista degli articoli:</h4>
+        <hr />
+        @foreach (var article in Model)
+        {
+            <div class="col-md-4">
+                <div class="card shadow">
+                    <img src="@article.CoverImageUrl" class="card-img-top" alt="article img">
+                    <div class="card-body bg-dark">
+                        <h5 class="card-title">@article.Name</h5>
+                        <div class="card-text">
+                            <p>@article.Description</p>
+                            <p>@article.Price.ToString("C")</p>
+                            </div>
+                        <a href="@Url.Action("Details", "Home", new { id = article.Id })" class="btn btn-outline-light">Dettagli</a>
+                    </div>
+                </div>
+            </div>
+        }
+
+    </div>
+    
+</div>
