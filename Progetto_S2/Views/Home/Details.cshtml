@@ -7,7 +7,7 @@
 <h1 class="bg-dark form-create text-light p-2 display-4">Details</h1>
 
 <div>
-    <h4>Dettagli dell'articolo</h4>
+    
     <hr />
     <dl class="row text-center">
         <dt class="col-sm-2 text-light">
@@ -30,10 +30,25 @@
             <p class="fw-normal">@Model.Description</p>
         </dt>
     </dl>
-    <img src="@Model.CoverImageUrl" alt="@Model.Name" class="img-fluid">
-    <div class="mt-4">
-        <img src="@Model.AdditionalImage1" alt="Immagine Addizionale 1" class="img-thumbnail">
-        <img src="@Model.AdditionalImage2" alt="Immagine Addizionale 2" class="img-thumbnail">
+    @if (!string.IsNullOrEmpty(Model.CoverImagePath))
+    {
+        <img src="@Model.CoverImagePath" alt="@Model.Name" class="img-fluid">
+    }
+    <div class="bg-dark form-create text-light p-2 mt-3">
+        <h2 class="fw-light">Altre Immagini dell'articolo</h2>
+    </div>
+    <hr />
+    <div class="mt-4 pt-3 d-flex justify-content-center gap-5">
+        @if (!string.IsNullOrEmpty(Model.AdditionalImagePath1))
+        {
+            <div class="border-end pe-5">
+            <img src="@Model.AdditionalImagePath1" alt="Immagine Addizionale 1" class="img-thumbnail">
+            </div>
+        }
+        @if (!string.IsNullOrEmpty(Model.AdditionalImagePath2))
+        {
+            <img src="@Model.AdditionalImagePath2" alt="Immagine Addizionale 2" class="img-thumbnail">
+        }
     </div>
 </div>
 <div>

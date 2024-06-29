@@ -15,6 +15,12 @@ namespace Progetto_S2.Models
         [Display(Name = "Descrizione dell'articolo")]
         public string Description { get; set; }
 
+        public string CoverImagePath { get; set; }
+
+        public string AdditionalImagePath1 { get; set; }
+
+        public string AdditionalImagePath2 { get; set; }
+
         [Display(Name = "Immagine di copertina dell'articolo")]
         public IFormFile CoverImageUrl { get; set; }
 

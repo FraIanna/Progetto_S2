@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Article>
+﻿@model IEnumerable<Progetto_S2.Models.Article>
 @{
     ViewData["Title"] = "Home Page";
     
@@ -13,7 +13,10 @@
         {
             <div class="col-md-4">
                 <div class="card shadow">
-                    <img src="@article.CoverImageUrl" class="card-img-top" alt="article img">
+                    @if (!string.IsNullOrEmpty(article.CoverImagePath))
+                    {
+                        <img src="@article.CoverImagePath" class="card-img-top" alt="article img">
+                    }
                     <div class="card-body bg-dark">
                         <h5 class="card-title">@article.Name</h5>
                         <div class="card-text">
